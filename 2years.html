@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To My Love — Anniversary</title>
+  <style>
+    /* Page palette and layout */
+    :root{
+      --page-bg: #ffe5ec; /* user's requested shade */
+      --accent: #a4133c;  /* requested text color for 'to my love' */
+      --card-bg: #ffffff;
+      --muted:#6b4e56;
+      --max-w:780px;
+      --radius:18px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--page-bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    /* Envelope + stamp */
+    .stage{width:100%;max-width:var(--max-w);}
+    .envelope{
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      padding:28px;
+      position:relative;
+      overflow:visible;
+    }
+    /* Top flap */
+    .envelope::before{
+      content:"";
+      position:absolute;
+      left:12px; right:12px; top:-36px;
+      height:72px;
+      background:var(--card-bg);
+      transform:skewY(-4deg);
+      border-radius:12px 12px 0 0;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      display:block;
+      z-index:0;
+    }
+
+    /* Heart stamp */
+    .stamp{
+      position:absolute;
+      right:20px; top:14px;
+      width:64px; height:64px;
+      border-radius:10px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 12px rgba(0,0,0,0.06);
+      z-index:2;
+      border:2px solid rgba(164,19,60,0.08);
+    }
+    .stamp .heart{
+      width:34px; height:32px; display:inline-block; transform:translateY(-2px);
+    }
+    .heart svg{display:block;width:100%;height:100%}
+
+    /* Letter area */
+    .letter{
+      position:relative;
+      z-index:1;
+      background:transparent;
+      padding:22px 18px 10px 18px;
+    }
+
+    h1.title{
+      margin:6px 0 8px 0;
+      font-size:42px;
+      line-height:1;
+      letter-spacing:0.4px;
+      color:var(--accent);
+      font-family: 'Mulled Wine Season', cursive;
+      text-shadow:0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .content{
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));
+      border-radius:12px;
+      padding:18px;
+      box-shadow:inset 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .content p{margin:0 0 12px 0;color:#433336;line-height:1.5}
+
+    footer.sign{margin-top:18px;text-align:right;color:var(--muted);font-weight:600}
+
+    /* small print for font fallback */
+    .note{font-size:12px;color:#7a5a62;margin-top:12px}
+
+    /* Responsive */
+    @media (max-width:480px){
+      h1.title{font-size:32px}
+      .stamp{width:54px;height:54px}
+    }
+  </style>
+  <!--
+    NOTE: If you want the exact font "Mulled Wine Season", add a @font-face with your .woff/.ttf file
+    or host it from a font provider and replace the font-family above. It falls back to cursive here.
+  -->
+</head>
+<body>
+  <div class="stage">
+    <div class="envelope">
+      <div class="stamp" aria-hidden="true">
+        <span class="heart">
+          <svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="var(--accent)" d="M23.6 2C20.9 2 18.6 3.7 16 6 13.4 3.7 11.1 2 8.4 2 4.4 2 1.6 5.1 1.6 9.1c0 6.5 7.4 11.6 13.9 16.3.6.4 1.5.4 2.1 0C22.9 20.7 30.2 15.6 30.2 9.1 30.2 5.1 27.4 2 23.6 2z"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="letter">
+        <h1 class="title">to my love</h1>
+        <p class="lead">Two years, and every day still feels like the first time I fell for you.</p>
+
+        <div class="content">
+          <p>hello, my honeyyy!</p>
+          <p>2 years!! two years that definitely weren’t easy, pero here we are, still choosing each other every single day. i couldn’t be more grateful. 2 years with someone i can lean on, someone who always supports me. all the hardships are so worth it, as long as it’s with you. sobrang mahal na mahal kita.</p>
+          <p>you’ll always be my light at the end of the tunnel, my hope that things do get better. i know things aren’t the best for the both of us right now, pero i know one day we’ll get to live the lives we dreamed of living. i’ll be your wife and you’ll be mine. i hope the next years will be good to us, and if it turns out the opposite, please know that i’ll always be by your side even when words fail me.</p>
+          <p>let’s enjoy these 5 days together, kahit umulan or hindi, matuloy sa gala or not, we’ll make the most of it okayy?? i love you, and happy anniversary my love.</p>
+          <div class="note">
+
+        <div class="sign">— forever, <span style="color:var(--accent)">yours</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
